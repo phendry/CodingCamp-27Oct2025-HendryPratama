@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>To Do List - Hendry</title>
+  <!-- <link rel="stylesheet" href="css/style.css" -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-50 text-gray-800 font-sans min-h-screen flex flex-col transition-colors duration-300" id="body">
+
+  <!-- HEADER -->
+  <header class="flex justify-between items-center px-8 py-4 bg-white shadow-md" id="headbar">
+    <h1 class="text-xl font-bold">To Do List - Hendry</h1>
+    <button id="toggleMode" class="bg-gray-400 hover:bg-gray-300 px-4 py-2 rounded-lg text-sm">
+      🌙 Dark Mode
+    </button>
+  </header>
+
+  <!-- MAIN SECTION -->
+  <main class="flex-grow flex justify-center items-start py-10">
+    <section class="bg-white w-[850px] rounded-2xl shadow-lg p-8" id="mainContainer">
+
+      <!-- DASHBOARD STATISTIC -->
+      <section aria-label="statistics" class="grid grid-cols-4 gap-3 text-center mb-6">
+        <div class="border rounded-xl p-4">
+          <p class="text-sm text-gray-400" id="header1">TOTAL TASKS</p>
+          <p id="totalTasks" class="text-3xl font-bold text-sky-500">0</p>
+        </div>
+        <div class="border rounded-xl p-4">
+          <p class="text-sm text-gray-400" id="header2">COMPLETED</p>
+          <p id="completedTasks" class="text-3xl font-bold text-green-500">0</p>
+        </div>
+        <div class="border rounded-xl p-4">
+          <p class="text-sm text-gray-400" id="header3">PENDING</p>
+          <p id="pendingTasks" class="text-3xl font-bold text-yellow-500">0</p>
+        </div>
+        <div class="border rounded-xl p-4">
+          <p class="text-sm text-gray-400" id="header4">PROGRESS</p>
+          <p id="progressPercent" class="text-3xl font-bold text-sky-500">0%</p>
+        </div>
+      </section>
+
+      <!-- PROGRESS BAR -->
+      <div class="h-2 bg-gray-200 rounded-full overflow-hidden mb-6">
+        <div id="progressBar" class="h-full bg-sky-600 w-0 transition-all duration-300"></div>
+      </div>
+
+      <!-- INPUT FORM -->
+      <section aria-label="input task" class="flex gap-3 mb-4">
+        <input id="taskInput" type="text" placeholder="Add a todo..." 
+          class="flex-1 border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400">
+        <input id="dueInput" type="date" 
+          class="border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400">
+        <button id="addBtn"
+          class="bg-sky-600 hover:bg-sky-400 text-white rounded-lg px-4 font-bold text-xl" type="button">+</button>
+      </section>
+
+      <!-- FILTERS -->
+      <section aria-label="filter" class="flex justify-between items-center mb-4 gap-3">
+        <input id="searchInput" type="text" placeholder="Search tasks..."
+          class="flex-1 border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-gray-400">
+        <select id="statusFilter"
+          class="border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-gray-400">
+          <option value="all">All</option>
+          <option value="pending">Pending</option>
+          <option value="completed">Completed</option>
+        </select>
+        <button id="deleteAllBtn"
+          class="bg-red-600 hover:bg-red-400 text-white rounded-lg px-4 py-2 text-sm font-medium">DELETE ALL</button>
+      </section>
+
+      <!-- TASK TABLE -->
+      <section aria-label="task table" class="overflow-hidden rounded-lg border border-gray-200" >
+        <table class="w-full text-sm">
+          <thead class="bg-gray-400 text-gray-600 text-center" id="tabletask">
+            <tr>
+              <th class="px-3 py-2">TASK</th>
+              <th class="px-3 py-2">DUE DATE</th>
+              <th class="px-3 py-2">STATUS</th>
+              <th class="px-3 py-2">ACTIONS</th>
+            </tr>
+          </thead>
+          <tbody id="todoBody" class="text-center">
+            <tr><td colspan="4" class="py-3 text-gray-400">No tasks yet</td></tr>
+          </tbody>
+        </table>
+      </section>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="text-center py-4 text-gray-500 text-sm">
+    &copy; 2025 by <b>Hendry Pratama.</b> All Rights Reserved
+  </footer>
+
+  <!-- SCRIPT -->
+  <script src="js/script.js"></script>
+</body>
+</html>
