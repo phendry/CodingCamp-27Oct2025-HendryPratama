@@ -50,21 +50,27 @@ statusFilter.addEventListener("change", renderTable);
 toggleMode.addEventListener("click", () => {
   darkMode = !darkMode;
   body.classList.toggle("bg-gray-900");
-  body.classList.toggle("text-white");
+  body.classList.toggle("text-black");
   headbar.classList.toggle("bg-gray-900");
+  headbar.classList.toggle("text-white");
   toggleMode.classList.toggle("bg-gray-600");
   mainContainer.classList.toggle("bg-gray-700");
   tabletask.classList.toggle("bg-gray-700");
   tabletask.classList.toggle("text-white");
   todoBody.classList.toggle("bg-gray-400");
+  contentTable.classList.toggle("text-black");
   header1.classList.toggle("text-white");
   header2.classList.toggle("text-white");
   header3.classList.toggle("text-white");
   header4.classList.toggle("text-white");
   taskInput.classList.toggle("bg-gray-900");
+  taskInput.classList.toggle("text-white");
   dueInput.classList.toggle("bg-gray-900");
+  dueInput.classList.toggle("text-white");
   searchInput.classList.toggle("bg-gray-900");
+  searchInput.classList.toggle("text-white");
   statusFilter.classList.toggle("bg-gray-900");
+  statusFilter.classList.toggle("text-white");
 
   
   
